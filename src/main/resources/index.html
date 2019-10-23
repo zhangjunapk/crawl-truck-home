@@ -1,0 +1,1194 @@
+<body id="mybody">
+<div id="BAIDU_DUP_fp_wrapper" style="position: absolute; left: -1px; bottom: -1px; z-index: 0; width: 0px; height: 0px; overflow: hidden; visibility: hidden; display: none;">
+    <iframe id="BAIDU_DUP_fp_iframe" src="https://pos.baidu.com/wh/o.htm?ltr=" style="width: 0px; height: 0px; visibility: hidden; display: none;"></iframe>
+</div>
+<div class="top-bar">
+    <div class="top-bar-inner">
+        <div class="top-bar-sign">
+            <span id="hello">你好，</span>
+            <script>
+                var m_backurl = document.URL;
+                var m_loginfile;
+                var m_temp;
+
+                function m_get_cookie(varname) {
+                    var tmp_ary = new Array();
+                    if (varname) {
+                        var a = document.cookie.indexOf(varname + "=");
+                        if (a != -1) {
+                            var b = document.cookie.substring((a + varname.length + 1), document.cookie.length);
+                            var c = b.split(";");
+                            var d = c[0];
+                            return d;
+                        }
+                    }
+                }
+
+                function goouturl() {
+                    var url = "http://bbs.360che.com/member.php?mod=logging&action=logout&referer=" + m_backurl;
+                    window.location = url;
+                }
+
+                m_temp = m_get_cookie('AbcfN_userid');
+                if (document.cookie.indexOf("AbcfN_userid=") == -1) {
+                    jQuery('#hello').show();
+                    document.writeln("<span class='login more'><a href='https://sso.360che.com/?c=login&referer=' class='title'>登录<i></i></a><div class='bubble-more-links'><a href='https://sso.360che.com/?c=login'>网友登录</a><a href='http://dealermg.360che.com/'>经销商登录</a></div></span>或<a href='https://sso.360che.com/?c=reg&referer='>注册</a>")
+                } else {
+                    //    m_temp = decodeURI(m_temp);
+                    // document.write("<a href='http://bbs.360che.com/memcp.php'>"+ m_temp.substring(0,24) +"</a><a href='javascript:goouturl()'>退出</a>");
+                    if (document.cookie.indexOf("AbcfN_nickname=") == -1) {
+                        m_temp = decodeURI(m_temp);
+                    } else {
+                        m_temp = decodeURI(m_get_cookie('AbcfN_nickname'));
+                    }
+                    jQuery('#hello').hide();
+                    m_temp = decodeURI(m_temp);
+                    var uid = m_get_cookie('AbcfN_ajaxuid');
+                    document.write("<div class='deng_hou' style='z-index: 1;'><a href='http://bbs.360che.com/memcp.php' class='aut_user_ma' target='_blank'>" + m_temp.substring(0, 24) + "<span id='newpmnum' style='display:none'>0</span><em></em></a>")
+                    document.write("        <div class='nav_w aut_user_box' style='height:152px;display:none;'>");
+                    document.write("                <ul style='margin-top: -152px;'>");
+                    document.write("                        <li class='aut_user_a atop9'><a href='//bbs.360che.com/pm.php?filter=privatepm' target='_blank'>我的短消息<span id='allpmnum'>(0)</span></a></li>");
+                    document.write("                        <li class='aut_user_a'><a href='//bbs.360che.com/space.php?uid=" + uid + "&items=otherthreads' target='_blank'>我发布的主帖</a></li>");
+                    document.write("                        <li class='aut_user_a'><a href='//bbs.360che.com/space.php?uid=" + uid + "' target='_blank'>我的个人中心</a></li>");
+                    document.write("                        <li class='aut_user_a aut_l_line'><a href='javascript:goouturl()'>退出</a></li>");
+                    document.write("                </ul>");
+                    document.write("        </div>  ");
+                    document.write("</div>");
+
+                    function initHeadxx() {
+                        jQuery.ajax({
+                            type: "get",
+                            cache: false,
+                            url: "http://bbs.360che.com/clubalert.php",
+                            data: {uid: uid, ershouche: 'yes'},
+                            dataType: "jsonp",
+                            jsonp: "callback",
+
+                            success: function (data) {
+                                if (data > 0) {
+                                    jQuery("#allpmnum").html('(' + data + ')');
+                                    jQuery("#newpmnum").html(data);
+                                    jQuery("#newpmnum").show();
+                                } else {
+                                    jQuery("#allpmnum").html('(0)');
+                                    jQuery("#newpmnum").hide();
+                                }
+                            }
+                        });
+                    }
+
+                    setTimeout(initHeadxx, 2000);
+                    setInterval(initHeadxx, 20000);
+                }
+            </script>
+            <span class="login more"><a href="https://sso.360che.com/?c=login&amp;referer=" class="title">登录<i></i></a>
+     <div class="bubble-more-links">
+      <a href="https://sso.360che.com/?c=login">网友登录</a>
+      <a href="http://dealermg.360che.com/">经销商登录</a>
+     </div></span>或
+            <a href="https://sso.360che.com/?c=reg&amp;referer=">注册</a>
+            <span class="site-map" id="site-map"><span class="map">网站地图</span>
+     <div class="site-map-content" id="site-map-content">
+      <dl>
+       <dt>
+        文章频道：
+       </dt>
+       <dd>
+        <a href="http://www.360che.com/News/#pvareaid=1010101">卡车新闻</a>|
+        <a href="http://www.360che.com/Market/#pvareaid=1010101  ">行情导购</a>|
+        <a href="http://www.360che.com/Driver/#pvareaid=1010101">养车用车</a>
+        <a href="http://www.360che.com/Tech/#pvareaid=1010101">试驾评测</a>|
+        <a href="http://www.360che.com/law/#pvareaid=1010101">政策法规</a>|
+        <a href="http://www.360che.com/wuliu/#pvareaid=1010101">物流信息</a>
+       </dd>
+      </dl>
+      <dl>
+       <dt>
+        产品库：
+       </dt>
+       <dd>
+        <a href="https://product.360che.com/p729/#pvareaid=1010101">轻卡报价</a>|
+        <a href="https://product.360che.com/price/c1_s66_b0_s0.html#pvareaid=1010101">牵引车报价</a>|
+        <a href="https://product.360che.com/price/c1_s64_b0_s0.html#pvareaid=1010101">载货车报价</a>
+        <a href="https://product.360che.com/price/c1_s63_b0_s0.html#pvareaid=1010101">自卸车报价</a>|
+        <a href="https://product.360che.com/zyc/#pvareaid=1010101">专用车报价</a>|
+        <a href="https://product.360che.com/price/c3_s61_b0_s0.html#pvareaid=1010101">配件报价</a>
+        <a href="https://product.360che.com/expc/index.html#pvareaid=1010101">车展图片</a>|
+        <a href="https://product.360che.com/oimg/index.html#pvareaid=1010101">官方图片</a>
+       </dd>
+      </dl>
+      <dl>
+       <dt>
+        卡车论坛：
+       </dt>
+       <dd>
+        <a href="https://bbs.360che.com/forum-96-1.html#bbsindex_qita#pvareaid=1010101">行车报告</a>|
+        <a href="https://bbs.360che.com/forum-98-1.html#bbsindex_qita#pvareaid=1010101">事故警示</a>|
+        <a href="https://bbs.360che.com/forum-102-1.html#bbsindex_qita#pvareaid=1010101">维修保养</a>
+        <a href="https://bbs.360che.com/forum-6-1.html#bbsindex_zatan#pvareaid=1010101">卡车杂谈</a>|
+        <a href="https://bbs.360che.com/club-77-1.html#pvareaid=1010101">自卸车</a>|
+        <a href="https://bbs.360che.com/club-52-1.html#pvareaid=1010101">轻卡</a>
+       </dd>
+      </dl>
+      <dl>
+       <dt>
+        其它：
+       </dt>
+       <dd>
+        <a href="https://tu.360che.com/#pvareaid=1010101">图片新闻</a>|
+        <a href="http://www.360che.com/v/#pvareaid=1010101">卡车视频</a>|
+        <a href="http://topic.360che.com/#pvareaid=1010101">卡车专题</a>
+        <a href="https://s.360che.com/#pvareaid=1010101">配件商城</a>|
+        <a href="http://tao.360che.com/#pvareaid=1010101">二手卡车</a>
+       </dd>
+      </dl>
+      <div class="site-map-more">
+       <a href="http://www.360che.com/help/sitemap/#pvareaid=1010101">查看更多&gt;&gt;</a>
+      </div>
+     </div> </span>
+        </div>
+        <a href="http://360che.com/" class="notice">卡车之家，商用车互动服务平台</a>
+        <span class="country"> <a href="javascript:;" class="caption">全国</a>
+    <dl class="">
+     <dt>
+      选择地区
+     </dt>
+     <dd>
+      <a class="selected">全国</a>
+      <a href="http://www.360che.com/beijing/#pvareaid=1010101">北京</a>
+      <a href="http://www.360che.com/hebei/#pvareaid=1010101">河北</a>
+      <a href="http://www.360che.com/jiangsu/#pvareaid=1010101">江苏</a>
+      <a href="http://www.360che.com/zhejiang/#pvareaid=1010101">浙江</a>
+      <a href="http://www.360che.com/shandong/#pvareaid=1010101">山东</a>
+      <a href="http://www.360che.com/henan/#pvareaid=1010101">河南</a>
+      <a href="http://www.360che.com/guangdong/#pvareaid=1010101">广东</a>
+      <a href="http://www.360che.com/shanghai/#pvareaid=1010101">上海</a>
+      <a href="http://www.360che.com/sichuan/#pvareaid=1010101">四川</a>
+      <a href="http://www.360che.com/chongqing/#pvareaid=1010101">重庆</a>
+      <a href="http://www.360che.com/shanxi/#pvareaid=1010101">山西</a>
+     </dd>
+    </dl> </span>
+        <span class="scansion app-span"> <a href="http://app.360che.com/android.html#pvareaid=1010101 " target="_blank" class="phone">扫码下载APP</a>
+    <div>
+     <h4>微信扫一扫下载<a href="http://app.360che.com/android.html ">详情</a></h4>
+     <span> <img src="https://s.kcimg.cn/cms/images/global/phone.jpg"> </span>
+    </div> </span>
+        <span class="scansion wechat-span"> <a href="http://app.360che.com/wx.html#pvareaid=1010101" class="wechat">关注微信</a>
+    <div>
+     <h4>微信扫一扫关注<a href="http://app.360che.com/wx.html">详情</a></h4>
+     <span> <img src="https://s.kcimg.cn/cms/images/global/weicha.png"> </span>
+    </div> </span>
+    </div>
+</div>
+<div class="site-nav-wrapper">
+    <span class="truckhome"><a href="http://www.360che.com/#pvareaid=1010101" target="_blank">卡车之家</a></span>
+    <div class="site-nav-2015 clearfix" id="sitenav">
+        <dl class="site-nav-news">
+            <dt>
+                <a href="http://www.360che.com/News/#pvareaid=1010101" target="_blank">资讯</a>
+            </dt>
+            <dd>
+     <span><a href="http://www.360che.com/Lablelist.html" class="more" target="_blank" data-morelinks="[
+                        {&quot;url&quot;:&quot;http://tu.360che.com/#pvareaid=1010101&quot;,&quot;content&quot;:&quot;图集&quot;},
+                        {&quot;url&quot;:&quot;http://www.360che.com/News/#pvareaid=1010101&quot;,&quot;content&quot;:&quot;新闻&quot;},
+                        {&quot;url&quot;:&quot;http://www.360che.com/Market/#pvareaid=1010101&quot;,&quot;content&quot;:&quot;导购&quot;},
+                        {&quot;url&quot;:&quot;http://www.360che.com/Driver/#pvareaid=1010101&quot;,&quot;content&quot;:&quot;用车&quot;},
+                        {&quot;url&quot;:&quot;http://www.360che.com/Tech/#pvareaid=1010101&quot;,&quot;content&quot;:&quot;评测&quot;},
+                        {&quot;url&quot;:&quot;http://www.360che.com/law/#pvareaid=1010101&quot;,&quot;content&quot;:&quot;法规&quot;},
+                        {&quot;url&quot;:&quot;http://www.360che.com/wuliu/#pvareaid=1010101&quot;,&quot;content&quot;:&quot;物流&quot;}
+                    ]">文章</a></span>
+                <span><a href="http://zhibo.360che.com/#pvareaid=1010101" target="_blank">直播</a></span>
+                <span><a href="http://topic.360che.com/#pvareaid=1010101" target="_blank">专题</a></span>
+                <span><a href="http://www.360che.com/v/#pvareaid=1010101" target="_blank">视频</a></span>
+            </dd>
+        </dl>
+        <dl class="site-nav-detail">
+            <dt>
+                <a href="https://product.360che.com/#pvareaid=1010101" target="_blank">报价库</a>
+            </dt>
+            <dd>
+     <span><a href="https://product.360che.com/#pvareaid=1010101" class="more" target="_blank" data-morelinks="[
+                        {&quot;url&quot;:&quot;//product.360che.com/p729/#pvareaid=1010101&quot;,&quot;content&quot;:&quot;轻卡报价&quot;},
+                        {&quot;url&quot;:&quot;//product.360che.com/price/c1_s66_b0_s0.html#pvareaid=1010101&quot;,&quot;content&quot;:&quot;牵引车报价&quot;},
+                        {&quot;url&quot;:&quot;//product.360che.com/price/c1_s64_b0_s0.html#pvareaid=1010101&quot;,&quot;content&quot;:&quot;载货车报价&quot;},
+                        {&quot;url&quot;:&quot;//product.360che.com/price/c1_s63_b0_s0.html#pvareaid=1010101&quot;,&quot;content&quot;:&quot;自卸车报价&quot;}
+                    ]">卡车报价</a></span>
+                <span><a href="/pic/#pvareaid=1010101" target="_blank">卡车图片</a></span>
+                <span><a href="/contrast/" target="_blank">车型对比</a></span>
+                <span><a href="/BrandList.html#pvareaid=1010101" target="_blank">品牌大全</a></span>
+            </dd>
+        </dl>
+        <dl class="site-nav-other">
+            <dd>
+                <span><a href="https://tao.360che.com/#pvareaid=1010101" target="_blank">二手货车</a></span>
+                <span class="dealer"><a href="https://dealer.360che.com/#pvareaid=1010101" target="_blank">经销商</a></span>
+                <span><a href="http://guache.360che.com/#pvareaid=1010101" target="_blank">挂车集市</a></span>
+                <span class="rank"><a href="https://top.360che.com" target="_blank">排行榜</a></span>
+            </dd>
+        </dl>
+        <dl class="site-nav-bbs">
+            <dt>
+                <a href="https://bbs.360che.com/#pvareaid=1010101" target="_blank">社区</a>
+            </dt>
+            <dd>
+                <span><a href="https://bbs.360che.com/#pvareaid=1010101" target="_blank">社区首页</a></span>
+                <span><a href="https://bbs.360che.com/hotthread/#pvareaid=1010101" target="_blank">十大热帖</a></span>
+                <span><a href="https://bbs.360che.com/newlist/#pvareaid=1010101" target="_blank">最新帖子</a></span>
+                <span><a href="https://bbs.360che.com/clublist/#bbsindex_more#pvareaid=1010101" target="_blank">车型论坛</a></span>
+            </dd>
+        </dl>
+        <!-- 新换为配件商城 -->
+        <dl class="site-nav-parts">
+            <dt>
+                <a href="https://s.360che.com/#pvareaid=1010101" target="_blank"> <span><i>正品</i></span> 配件商城 </a>
+            </dt>
+        </dl>
+    </div>
+</div>
+<div class="category-nav clearfix">
+    <a href="http://www.360che.com/small/#pvareaid=1010101" target="_blank" class="category-light">轻卡</a>
+    <a href="http://www.360che.com/zhongka/#pvareaid=1010101" target="_blank" class="category-mixer">重卡</a>
+    <span class="category-minicar more"> <a href="https://product.360che.com/p728/#pvareaid=1010101" target="_blank" class="title">微车<i></i></a>
+   <div class="bubble-more-links">
+    <a href="https://product.360che.com/p728/#pvareaid=1010101" target="_blank">微卡</a>
+    <a href="https://product.360che.com/price/c6_s93_b0_s0.html#pvareaid=1010101" target="_blank">微面</a>
+    <a href="http://www.360che.com/van/#pvareaid=1010101" target="_blank">van/封闭货车</a>
+   </div> </span>
+    <a href="http://www.360che.com/qianyin/#pvareaid=1010101" target="_blank" class="category-tractor">牵引车</a>
+    <a href="http://www.360che.com/zaihuo/#pvareaid=1010101" target="_blank" class="category-cargo">载货车</a>
+    <a href="http://www.360che.com/zixie/#pvareaid=1010101" target="_blank" class="category-dumper">自卸车</a>
+    <a href="http://pika.360che.com/#pvareaid=1010101" target="_blank" class="category-pickup">皮卡</a>
+    <a href="http://guache.360che.com/#pvareaid=1010101" target="_blank" class="category-trailer">挂车</a>
+    <span class="category-special more"> <a href="http://www.360che.com/zyc/#pvareaid=1010101" target="_blank" class="title">专用车<i></i></a>
+   <div class="bubble-more-links">
+    <a href="http://www.360che.com/hnt/#pvareaid=1010101 " target="_blank">搅拌车</a>
+    <a href="http://www.360che.com/ssc/#pvareaid=1010101" target="_blank">洒水车</a>
+    <a href="http://www.360che.com/kyc/#pvareaid=1010101" target="_blank">矿用车</a>
+    <a href="http://www.360che.com/scd/#pvareaid=1010101" target="_blank">随车吊</a>
+    <a href="http://www.360che.com/xfc/#pvareaid=1010101" target="_blank">消防车</a>
+    <a href="http://www.360che.com/ljc/#pvareaid=1010101" target="_blank">垃圾车</a>
+    <a href="http://www.360che.com/lengcang/#pvareaid=1010101" target="_blank">冷藏车</a>
+    <a href="http://www.360che.com/ygc/#pvareaid=1010101" target="_blank">油罐车</a>
+    <a href="http://www.360che.com/pbc/#pvareaid=1010101" target="_blank">平板车</a>
+   </div> </span>
+    <span class="category-parts"> <a href="http://www.360che.com/peijian/#pvareaid=1010101" target="_blank" class="title">总成/配件<i></i></a>
+   <div class="bubble-more-links">
+    <a href="https://product.360che.com/price/c3_s61_b0_s0.html#pvareaid=1010101" target="_blank">发动机</a>
+    <a href="https://product.360che.com/price/c3_s62_b0_s0.html#pvareaid=1010101" target="_blank">变速箱</a>
+    <a href="https://product.360che.com/price/c3_s86_b0_s0.html#pvareaid=1010101" target="_blank">机油</a>
+    <a href="https://product.360che.com/price/c3_s91_b0_s0.html#pvareaid=1010101" target="_blank">车桥</a>
+   </div> </span>
+    <a href="http://www.360che.com/bev/#pvareaid=1010101" target="_blank" class="category-electrocar">电动车</a>
+</div>
+<script src="https://s.kcimg.cn/cms/js/global/v.01/global-sitenav.2015.js?v4.4.19"></script>
+<!--登录页头▲-->
+<!-- 注意此处去掉的广告位  dzq 2015-12-17 -->
+<div class="wrapper">
+    <!-- 顶部广告位 -->
+    <!--
+  <div class="ad-div-360che">
+      <div>
+          <a href="#">
+              <img src="http://ubmcmm.baidustatic.com/media/v1/0f000QYBwmBQ7kZ-DFJdQ0.jpg" alt="">
+          </a>
+      </div>
+  </div>
+  -->
+    <style>
+        .choose-model .condition-module{
+            margin:0 10px 10px 0;
+        }
+        .choose-model .condition-module:nth-of-type(6){
+            margin-right: 0;
+        }
+        .detail-header h1{
+            overflow: hidden;
+        }
+    </style>
+    <!-- 搜索 && 面包屑 -->
+    <div class="channel-bar clearfix">
+        <div class="search">
+            <form action="https://bbs.360che.com/_search.php" method="GET" id="search" autocomplete="off" target="_blank">
+                <input type="text" name="q" placeholder="请输入要查询的关键字" value="">
+                <input type="hidden" name="s" value="3494890232603857038">
+                <input type="hidden" name="nsid" value="3">
+                <input type="submit" value="搜索">
+            </form>
+        </div>
+        <div class="crumbs clearfix">
+            <div class="inner">
+                您的当前位置：
+                <a target="_blank" href="http://www.360che.com/" class="gred6"> 卡车之家</a> &gt;
+                <a target="_blank" href="/BrandList.html" class="gred6"> 品牌大全</a> &gt;
+                <a target="_blank" href="/b_19.html" class="gred6"> 奔驰</a> &gt;
+                <a target="_blank" href="/s12/3169_index.html" class="gred6"> 奔驰新Actros</a> &gt;
+                <a target="_blank" href="/s12/3169_64_index.html" class="gred6"> 奔驰新Actros 载货车</a> &gt;
+                <span>参数配置</span>
+            </div>
+        </div>
+    </div>
+    <!-- 排行及标题  start-->
+    <div class="detail-header">
+        <h1><a href="/s12/3169_64_index.html">奔驰新Actros载货车</a></h1>
+    </div>
+    <!-- 排行及标题  end -->
+    <div class="detail-nav-2015">
+        <ul class="clearfix">
+            <li><a target="_self" href="/s12/3169_64_index.html">车系首页</a></li>
+            <li class="current"><h3>参数配置</h3></li>
+            <li><a target="_self" href="/s12/3169_64_pic.html">图片实拍</a></li>
+            <li><a target="_self" href="/s12/3169_64_Price.html">车型报价</a></li>
+            <li><a target="_self" href="/s12/3169_64_Article.html">文章</a></li>
+            <li><a target="_self" href="https://bbs.360che.com/club-1062-1.html">论坛</a></li>
+            <li><a target="_self" href="/s12/3169_64_sStation.html">维修售后服务站<em>(51家)</em></a></li>
+            <li><a href="https://tao.360che.com/c64_b19/" onclick="return taoGa('内部推广-PC-子类车系页导航栏二手车入口', 'https://tao.360che.com/c64_b19/');"><span>二手车</span></a></li>
+        </ul>
+    </div>
+    <!-- 添加筛选条件 -->
+    <div class="choose-condition">
+        <h4>筛选条件</h4>
+        <div class="choose-model clearfix" id="choose_model">
+            <div class="condition-module ">
+                <div class="selected">
+                    驱动形式
+                </div>
+                <ul class="mask">
+                    <li><a href="/s12/3169_64_param.html">全部</a></li>
+                    <li><a href="/price/c1_s64_b19_s3169_p172.html">4X2</a></li>
+                </ul>
+                <input type="hidden" name="" value="">
+            </div>
+            <div class="condition-module ">
+                <div class="selected">
+                    发动机
+                </div>
+                <ul class="mask">
+                    <li><a href="/s12/3169_64_param.html">全部</a></li>
+                    <li><a href="/price/c1_s64_b19_s3169_p2奔驰.html">奔驰</a></li>
+                </ul>
+                <input type="hidden" name="" value="">
+            </div>
+            <div class="condition-module ">
+                <div class="selected">
+                    最大马力
+                </div>
+                <ul class="mask">
+                    <li><a href="/s12/3169_64_param.html">全部</a></li>
+                    <li><a href="/price/c1_s64_b19_s3169_p3300.html">300马力</a></li>
+                </ul>
+                <input type="hidden" name="" value="">
+            </div>
+            <div class="condition-module  condition-last ">
+                <div class="selected">
+                    排放标准
+                </div>
+                <ul class="mask">
+                    <li><a href="/s12/3169_64_param.html">全部</a></li>
+                    <li><a href="/price/c1_s64_b19_s3169_p7国六.html">国六</a></li>
+                </ul>
+                <input type="hidden" name="" value="">
+            </div>
+        </div>
+    </div>
+    <!-- 参数 -->
+    <div class="parameter-detail">
+        <table>
+            <!-- 查询默认在售的品牌名称和报价 最底价 start -->
+            <thead>
+            <tr id="fixed_top" style="left: 0px;">
+                <th id="ai_p_0">
+                    <div class="filter">
+                        <!--
+                                        <label for="highlight_parameter">
+                                            <input type="checkbox" id="highlight_parameter"  />
+                                            高亮显示差异参数
+                                        </label>
+                                        <label for="hidden_parameter">
+                                            <input type="checkbox" id="hidden_parameter" />
+                                            隐藏相同参数
+                                        </label>
+                                        -->
+                    </div> </th>
+                <th>
+                    <div class="title-bar">
+                        <i class="remove">×</i>
+                        <h5> <a href="/m239/59755_index.html " target="_blank">奔驰 新Actros 300马力 4X2载货车底盘(型号1830L NGT)</a> </h5>
+                        <div class="tool">
+                            <span class="move-previous first">左移</span>
+                            <span class="compare" data-subcateid="64" data-id="59755" data-name="奔驰 新Actros 300马力 4X2载货车底盘(型号1830L NGT)">对比</span>
+                            <span class="move-next">右移</span>
+                        </div>
+                    </div> </th>
+                <th>
+                    <div class="title-bar">
+                        <i class="remove">×</i>
+                        <h5> <a href="/m239/59727_index.html " target="_blank">奔驰 新Actros 6X2冷藏车(型号2540L)</a> </h5>
+                        <div class="tool">
+                            <span class="move-previous ">左移</span>
+                            <span class="compare" data-subcateid="64" data-id="59727" data-name="奔驰 新Actros 6X2冷藏车(型号2540L)">对比</span>
+                            <span class="move-next">右移</span>
+                        </div>
+                    </div> </th>
+            </tr>
+            <tr>
+                <td>厂商指导价：</td>
+                <td>暂无报价</td>
+                <td>暂无报价</td>
+            </tr>
+            <tr class="local-low-price">
+                <td>本地最低报价：</td>
+                <td> <a href="/ibp/index_p59755.html" class="consult" onclick="gacode('点击询底价按钮', '产品库_子类车系配置页', '','param');" rel="nofollow">询底价</a> </td>
+                <td> <a href="/ibp/index_p59727.html" class="consult" onclick="gacode('点击询底价按钮', '产品库_子类车系配置页', '','param');" rel="nofollow">询底价</a> </td>
+            </tr>
+            </thead>
+            <!-- 查询默认在售的品牌名称和报价 最底价 end -->
+            <tbody>
+            <tr class="param-tit">
+                <th>基本信息</th>
+                <th colspan="2"></th>
+            </tr>
+            <!-- 对比本列数据不同 start -->
+            <!-- 页面显示不同 -->
+            <tr class="param-row">
+                <td id="ai_p_1">类型：</td>
+                <!-- 拼接数据的开始1 start -->
+                <!-- 拼接数据的开始 start -->
+                <td>
+                    <div>
+                        底盘
+                        <span class="edit-err" data-id="59755" data-pid="722" data-oname="底盘" data-unit="" data-name="奔驰 新Actros 300马力 4X2载货车底盘(型号1830L NGT)" data-pname="类型"></span>
+                    </div> </td>
+                <!-- <i class="edit" style="display:none;" ></i> -->
+                <!-- 拼接数据的开始 start -->
+                <td>
+                    <div>
+                        厢式载货车
+                        <span class="edit-err" data-id="59727" data-pid="722" data-oname="厢式载货车" data-unit="" data-name="奔驰 新Actros 6X2冷藏车(型号2540L)" data-pname="类型"></span>
+                    </div> </td>
+                <!-- <i class="edit" style="display:none;" ></i> -->
+                <!-- 以下是拼接的数据  end -->
+            </tr>
+            <!-- 对比本列数据不同 start -->
+            <!-- 页面显示不同 -->
+            <tr class="param-row">
+                <td id="ai_p_2">驱动形式：</td>
+                <!-- 拼接数据的开始1 start -->
+                <!-- 拼接数据的开始 start -->
+                <td>
+                    <div>
+                        4X2
+                        <span class="edit-err" data-id="59755" data-pid="334" data-oname="4X2" data-unit="" data-name="奔驰 新Actros 300马力 4X2载货车底盘(型号1830L NGT)" data-pname="驱动形式"></span>
+                    </div> </td>
+                <!-- <i class="edit" style="display:none;" ></i> -->
+                <!-- 拼接数据的开始 start -->
+                <td>
+                    <div>
+                        4X2
+                        <span class="edit-err" data-id="59727" data-pid="334" data-oname="4X2" data-unit="" data-name="奔驰 新Actros 6X2冷藏车(型号2540L)" data-pname="驱动形式"></span>
+                    </div> </td>
+                <!-- <i class="edit" style="display:none;" ></i> -->
+                <!-- 以下是拼接的数据  end -->
+            </tr>
+            <!-- 对比本列数据不同 start -->
+            <!-- 页面显示不同 -->
+            <tr class="param-row">
+                <td id="ai_p_3">轴距：</td>
+                <!-- 拼接数据的开始1 start -->
+                <!-- 拼接数据的开始 start -->
+                <td>
+                    <div>
+                        5500mm
+                        <span class="edit-err" data-id="59755" data-pid="335" data-oname="5500" data-unit="mm" data-name="奔驰 新Actros 300马力 4X2载货车底盘(型号1830L NGT)" data-pname="轴距"></span>
+                    </div> </td>
+                <!-- <i class="edit" style="display:none;" ></i> -->
+                <!-- 拼接数据的开始 start -->
+                <td>
+                    <div>
+                        <span class="edit-err" data-id="59727" data-pid="" data-oname="" data-unit="" data-name="奔驰 新Actros 6X2冷藏车(型号2540L)" data-pname=""></span>
+                    </div> </td>
+                <!-- <i class="edit" style="display:none;" ></i> -->
+                <!-- 以下是拼接的数据  end -->
+            </tr>
+            <!-- 对比本列数据不同 start -->
+            <!-- 页面显示不同 -->
+            <tr class="param-row">
+                <td id="ai_p_4">发动机：</td>
+                <!-- 拼接数据的开始1 start -->
+                <!-- 拼接数据的开始 start -->
+                <td>
+                    <div>
+                        奔驰M936G
+                        <span class="edit-err" data-id="59755" data-pid="2161" data-oname="奔驰M936G" data-unit="" data-name="奔驰 新Actros 300马力 4X2载货车底盘(型号1830L NGT)" data-pname="发动机"></span>
+                    </div> </td>
+                <!-- <i class="edit" style="display:none;" ></i> -->
+                <!-- 拼接数据的开始 start -->
+                <td>
+                    <div>
+                        <span class="edit-err" data-id="59727" data-pid="" data-oname="" data-unit="" data-name="奔驰 新Actros 6X2冷藏车(型号2540L)" data-pname=""></span>
+                    </div> </td>
+                <!-- <i class="edit" style="display:none;" ></i> -->
+                <!-- 以下是拼接的数据  end -->
+            </tr>
+            <!-- 对比本列数据不同 start -->
+            <!-- 页面显示不同 -->
+            <tr class="param-row">
+                <td id="ai_p_5">总质量：</td>
+                <!-- 拼接数据的开始1 start -->
+                <!-- 拼接数据的开始 start -->
+                <td>
+                    <div>
+                        18吨
+                        <span class="edit-err" data-id="59755" data-pid="359" data-oname="18" data-unit="吨" data-name="奔驰 新Actros 300马力 4X2载货车底盘(型号1830L NGT)" data-pname="总质量"></span>
+                    </div> </td>
+                <!-- <i class="edit" style="display:none;" ></i> -->
+                <!-- 拼接数据的开始 start -->
+                <td>
+                    <div>
+                        <span class="edit-err" data-id="59727" data-pid="" data-oname="" data-unit="" data-name="奔驰 新Actros 6X2冷藏车(型号2540L)" data-pname=""></span>
+                    </div> </td>
+                <!-- <i class="edit" style="display:none;" ></i> -->
+                <!-- 以下是拼接的数据  end -->
+            </tr>
+            <!-- 对比本列数据不同 start -->
+            <!-- 页面显示不同 -->
+            <tr class="param-row">
+                <td id="ai_p_6">吨位级别：</td>
+                <!-- 拼接数据的开始1 start -->
+                <!-- 拼接数据的开始 start -->
+                <td>
+                    <div>
+                        重型载货车
+                        <span class="edit-err" data-id="59755" data-pid="741" data-oname="重型载货车" data-unit="" data-name="奔驰 新Actros 300马力 4X2载货车底盘(型号1830L NGT)" data-pname="吨位级别"></span>
+                    </div> </td>
+                <!-- <i class="edit" style="display:none;" ></i> -->
+                <!-- 拼接数据的开始 start -->
+                <td>
+                    <div>
+                        <span class="edit-err" data-id="59727" data-pid="" data-oname="" data-unit="" data-name="奔驰 新Actros 6X2冷藏车(型号2540L)" data-pname=""></span>
+                    </div> </td>
+                <!-- <i class="edit" style="display:none;" ></i> -->
+                <!-- 以下是拼接的数据  end -->
+            </tr>
+            <tr class="param-tit">
+                <th>发动机</th>
+                <th colspan="2"></th>
+            </tr>
+            <!-- 对比本列数据不同 start -->
+            <!-- 页面显示不同 -->
+            <tr class="param-row">
+                <td id="ai_p_7">发动机：</td>
+                <!-- 拼接数据的开始1 start -->
+                <!-- 拼接数据的开始 start -->
+                <td>
+                    <div>
+                        奔驰M936G
+                        <span class="edit-err" data-id="59755" data-pid="344" data-oname="奔驰M936G" data-unit="" data-name="奔驰 新Actros 300马力 4X2载货车底盘(型号1830L NGT)" data-pname="发动机"></span>
+                    </div> </td>
+                <!-- <i class="edit" style="display:none;" ></i> -->
+                <!-- 拼接数据的开始 start -->
+                <td>
+                    <div>
+                        <span class="edit-err" data-id="59727" data-pid="" data-oname="" data-unit="" data-name="奔驰 新Actros 6X2冷藏车(型号2540L)" data-pname=""></span>
+                    </div> </td>
+                <!-- <i class="edit" style="display:none;" ></i> -->
+                <!-- 以下是拼接的数据  end -->
+            </tr>
+            <!-- 对比本列数据不同 start -->
+            <!-- 页面显示不同 -->
+            <tr class="param-row">
+                <td id="ai_p_8">发动机品牌：</td>
+                <!-- 拼接数据的开始1 start -->
+                <!-- 拼接数据的开始 start -->
+                <td>
+                    <div>
+                        奔驰
+                        <span class="edit-err" data-id="59755" data-pid="2327" data-oname="奔驰" data-unit="" data-name="奔驰 新Actros 300马力 4X2载货车底盘(型号1830L NGT)" data-pname="发动机品牌"></span>
+                    </div> </td>
+                <!-- <i class="edit" style="display:none;" ></i> -->
+                <!-- 拼接数据的开始 start -->
+                <td>
+                    <div>
+                        <span class="edit-err" data-id="59727" data-pid="" data-oname="" data-unit="" data-name="奔驰 新Actros 6X2冷藏车(型号2540L)" data-pname=""></span>
+                    </div> </td>
+                <!-- <i class="edit" style="display:none;" ></i> -->
+                <!-- 以下是拼接的数据  end -->
+            </tr>
+            <!-- 对比本列数据不同 start -->
+            <!-- 页面显示不同 -->
+            <tr class="param-row">
+                <td id="ai_p_9">汽缸数：</td>
+                <!-- 拼接数据的开始1 start -->
+                <!-- 拼接数据的开始 start -->
+                <td>
+                    <div>
+                        6
+                        <span class="edit-err" data-id="59755" data-pid="363" data-oname="6" data-unit="" data-name="奔驰 新Actros 300马力 4X2载货车底盘(型号1830L NGT)" data-pname="汽缸数"></span>
+                    </div> </td>
+                <!-- <i class="edit" style="display:none;" ></i> -->
+                <!-- 拼接数据的开始 start -->
+                <td>
+                    <div>
+                        <span class="edit-err" data-id="59727" data-pid="" data-oname="" data-unit="" data-name="奔驰 新Actros 6X2冷藏车(型号2540L)" data-pname=""></span>
+                    </div> </td>
+                <!-- <i class="edit" style="display:none;" ></i> -->
+                <!-- 以下是拼接的数据  end -->
+            </tr>
+            <!-- 对比本列数据不同 start -->
+            <!-- 页面显示不同 -->
+            <tr class="param-row">
+                <td id="ai_p_10">燃料种类：</td>
+                <!-- 拼接数据的开始1 start -->
+                <!-- 拼接数据的开始 start -->
+                <td>
+                    <div>
+                        柴油
+                        <span class="edit-err" data-id="59755" data-pid="364" data-oname="柴油" data-unit="" data-name="奔驰 新Actros 300马力 4X2载货车底盘(型号1830L NGT)" data-pname="燃料种类"></span>
+                    </div> </td>
+                <!-- <i class="edit" style="display:none;" ></i> -->
+                <!-- 拼接数据的开始 start -->
+                <td>
+                    <div>
+                        <span class="edit-err" data-id="59727" data-pid="" data-oname="" data-unit="" data-name="奔驰 新Actros 6X2冷藏车(型号2540L)" data-pname=""></span>
+                    </div> </td>
+                <!-- <i class="edit" style="display:none;" ></i> -->
+                <!-- 以下是拼接的数据  end -->
+            </tr>
+            <!-- 对比本列数据不同 start -->
+            <!-- 页面显示不同 -->
+            <tr class="param-row">
+                <td id="ai_p_11">汽缸排列形式：</td>
+                <!-- 拼接数据的开始1 start -->
+                <!-- 拼接数据的开始 start -->
+                <td>
+                    <div>
+                        直列
+                        <span class="edit-err" data-id="59755" data-pid="365" data-oname="直列" data-unit="" data-name="奔驰 新Actros 300马力 4X2载货车底盘(型号1830L NGT)" data-pname="汽缸排列形式"></span>
+                    </div> </td>
+                <!-- <i class="edit" style="display:none;" ></i> -->
+                <!-- 拼接数据的开始 start -->
+                <td>
+                    <div>
+                        <span class="edit-err" data-id="59727" data-pid="" data-oname="" data-unit="" data-name="奔驰 新Actros 6X2冷藏车(型号2540L)" data-pname=""></span>
+                    </div> </td>
+                <!-- <i class="edit" style="display:none;" ></i> -->
+                <!-- 以下是拼接的数据  end -->
+            </tr>
+            <!-- 对比本列数据不同 start -->
+            <!-- 页面显示不同 -->
+            <tr class="param-row">
+                <td id="ai_p_12">排放标准：</td>
+                <!-- 拼接数据的开始1 start -->
+                <!-- 拼接数据的开始 start -->
+                <td>
+                    <div>
+                        国六
+                        <span class="edit-err" data-id="59755" data-pid="367" data-oname="国六" data-unit="" data-name="奔驰 新Actros 300马力 4X2载货车底盘(型号1830L NGT)" data-pname="排放标准"></span>
+                    </div> </td>
+                <!-- <i class="edit" style="display:none;" ></i> -->
+                <!-- 拼接数据的开始 start -->
+                <td>
+                    <div>
+                        <span class="edit-err" data-id="59727" data-pid="" data-oname="" data-unit="" data-name="奔驰 新Actros 6X2冷藏车(型号2540L)" data-pname=""></span>
+                    </div> </td>
+                <!-- <i class="edit" style="display:none;" ></i> -->
+                <!-- 以下是拼接的数据  end -->
+            </tr>
+            <!-- 对比本列数据不同 start -->
+            <!-- 页面显示不同 -->
+            <tr class="param-row">
+                <td id="ai_p_13">最大输出功率：</td>
+                <!-- 拼接数据的开始1 start -->
+                <!-- 拼接数据的开始 start -->
+                <td>
+                    <div>
+                        222kw
+                        <span class="edit-err" data-id="59755" data-pid="346" data-oname="222" data-unit="kw" data-name="奔驰 新Actros 300马力 4X2载货车底盘(型号1830L NGT)" data-pname="最大输出功率"></span>
+                    </div> </td>
+                <!-- <i class="edit" style="display:none;" ></i> -->
+                <!-- 拼接数据的开始 start -->
+                <td>
+                    <div>
+                        <span class="edit-err" data-id="59727" data-pid="" data-oname="" data-unit="" data-name="奔驰 新Actros 6X2冷藏车(型号2540L)" data-pname=""></span>
+                    </div> </td>
+                <!-- <i class="edit" style="display:none;" ></i> -->
+                <!-- 以下是拼接的数据  end -->
+            </tr>
+            <!-- 对比本列数据不同 start -->
+            <!-- 页面显示不同 -->
+            <tr class="param-row">
+                <td id="ai_p_14">最大马力：</td>
+                <!-- 拼接数据的开始1 start -->
+                <!-- 拼接数据的开始 start -->
+                <td>
+                    <div>
+                        300马力
+                        <span class="edit-err" data-id="59755" data-pid="534" data-oname="300" data-unit="马力" data-name="奔驰 新Actros 300马力 4X2载货车底盘(型号1830L NGT)" data-pname="最大马力"></span>
+                    </div> </td>
+                <!-- <i class="edit" style="display:none;" ></i> -->
+                <!-- 拼接数据的开始 start -->
+                <td>
+                    <div>
+                        <span class="edit-err" data-id="59727" data-pid="" data-oname="" data-unit="" data-name="奔驰 新Actros 6X2冷藏车(型号2540L)" data-pname=""></span>
+                    </div> </td>
+                <!-- <i class="edit" style="display:none;" ></i> -->
+                <!-- 以下是拼接的数据  end -->
+            </tr>
+            <!-- 对比本列数据不同 start -->
+            <!-- 页面显示不同 -->
+            <tr class="param-row">
+                <td id="ai_p_15">扭矩：</td>
+                <!-- 拼接数据的开始1 start -->
+                <!-- 拼接数据的开始 start -->
+                <td>
+                    <div>
+                        1200N·m
+                        <span class="edit-err" data-id="59755" data-pid="533" data-oname="1200" data-unit="N·m" data-name="奔驰 新Actros 300马力 4X2载货车底盘(型号1830L NGT)" data-pname="扭矩"></span>
+                    </div> </td>
+                <!-- <i class="edit" style="display:none;" ></i> -->
+                <!-- 拼接数据的开始 start -->
+                <td>
+                    <div>
+                        <span class="edit-err" data-id="59727" data-pid="" data-oname="" data-unit="" data-name="奔驰 新Actros 6X2冷藏车(型号2540L)" data-pname=""></span>
+                    </div> </td>
+                <!-- <i class="edit" style="display:none;" ></i> -->
+                <!-- 以下是拼接的数据  end -->
+            </tr>
+            <!-- 对比本列数据不同 start -->
+            <!-- 页面显示不同 -->
+            <tr class="param-row">
+                <td id="ai_p_16">最大扭矩转速：</td>
+                <!-- 拼接数据的开始1 start -->
+                <!-- 拼接数据的开始 start -->
+                <td>
+                    <div>
+                        1200-1600RPM
+                        <span class="edit-err" data-id="59755" data-pid="369" data-oname="1200-1600" data-unit="RPM" data-name="奔驰 新Actros 300马力 4X2载货车底盘(型号1830L NGT)" data-pname="最大扭矩转速"></span>
+                    </div> </td>
+                <!-- <i class="edit" style="display:none;" ></i> -->
+                <!-- 拼接数据的开始 start -->
+                <td>
+                    <div>
+                        <span class="edit-err" data-id="59727" data-pid="" data-oname="" data-unit="" data-name="奔驰 新Actros 6X2冷藏车(型号2540L)" data-pname=""></span>
+                    </div> </td>
+                <!-- <i class="edit" style="display:none;" ></i> -->
+                <!-- 以下是拼接的数据  end -->
+            </tr>
+            <!-- 对比本列数据不同 start -->
+            <!-- 页面显示不同 -->
+            <tr class="param-row">
+                <td id="ai_p_17">额定转速：</td>
+                <!-- 拼接数据的开始1 start -->
+                <!-- 拼接数据的开始 start -->
+                <td>
+                    <div>
+                        2000RPM
+                        <span class="edit-err" data-id="59755" data-pid="544" data-oname="2000" data-unit="RPM" data-name="奔驰 新Actros 300马力 4X2载货车底盘(型号1830L NGT)" data-pname="额定转速"></span>
+                    </div> </td>
+                <!-- <i class="edit" style="display:none;" ></i> -->
+                <!-- 拼接数据的开始 start -->
+                <td>
+                    <div>
+                        <span class="edit-err" data-id="59727" data-pid="" data-oname="" data-unit="" data-name="奔驰 新Actros 6X2冷藏车(型号2540L)" data-pname=""></span>
+                    </div> </td>
+                <!-- <i class="edit" style="display:none;" ></i> -->
+                <!-- 以下是拼接的数据  end -->
+            </tr>
+            <tr class="param-tit">
+                <th>轮胎</th>
+                <th colspan="2"></th>
+            </tr>
+            <!-- 对比本列数据不同 start -->
+            <!-- 页面显示不同 -->
+            <tr class="param-row">
+                <td id="ai_p_18">轮胎规格：</td>
+                <!-- 拼接数据的开始1 start -->
+                <!-- 拼接数据的开始 start -->
+                <td>
+                    <div>
+                        315/70R22.5
+                        <span class="edit-err" data-id="59755" data-pid="377" data-oname="315/70R22.5" data-unit="" data-name="奔驰 新Actros 300马力 4X2载货车底盘(型号1830L NGT)" data-pname="轮胎规格"></span>
+                    </div> </td>
+                <!-- <i class="edit" style="display:none;" ></i> -->
+                <!-- 拼接数据的开始 start -->
+                <td>
+                    <div>
+                        <span class="edit-err" data-id="59727" data-pid="" data-oname="" data-unit="" data-name="奔驰 新Actros 6X2冷藏车(型号2540L)" data-pname=""></span>
+                    </div> </td>
+                <!-- <i class="edit" style="display:none;" ></i> -->
+                <!-- 以下是拼接的数据  end -->
+            </tr>
+            <!-- 对比本列数据不同 start -->
+            <!-- 页面显示不同 -->
+            <tr class="param-row">
+                <td id="ai_p_19">轮胎数：</td>
+                <!-- 拼接数据的开始1 start -->
+                <!-- 拼接数据的开始 start -->
+                <td>
+                    <div>
+                        6个
+                        <span class="edit-err" data-id="59755" data-pid="604" data-oname="6" data-unit="个" data-name="奔驰 新Actros 300马力 4X2载货车底盘(型号1830L NGT)" data-pname="轮胎数"></span>
+                    </div> </td>
+                <!-- <i class="edit" style="display:none;" ></i> -->
+                <!-- 拼接数据的开始 start -->
+                <td>
+                    <div>
+                        4个
+                        <span class="edit-err" data-id="59727" data-pid="604" data-oname="4" data-unit="个" data-name="奔驰 新Actros 6X2冷藏车(型号2540L)" data-pname="轮胎数"></span>
+                    </div> </td>
+                <!-- <i class="edit" style="display:none;" ></i> -->
+                <!-- 以下是拼接的数据  end -->
+            </tr>
+            <tr class="param-tit">
+                <th>操控配置</th>
+                <th colspan="2"></th>
+            </tr>
+            <!-- 对比本列数据不同 start -->
+            <!-- 页面显示不同 -->
+            <tr class="param-row">
+                <td id="ai_p_20">ABS防抱死：</td>
+                <!-- 拼接数据的开始1 start -->
+                <!-- 拼接数据的开始 start -->
+                <td>
+                    <div>
+                        ●
+                        <span class="edit-err" data-id="59755" data-pid="2056" data-oname="●" data-unit="" data-name="奔驰 新Actros 300马力 4X2载货车底盘(型号1830L NGT)" data-pname="ABS防抱死"></span>
+                    </div> </td>
+                <!-- <i class="edit" style="display:none;" ></i> -->
+                <!-- 拼接数据的开始 start -->
+                <td>
+                    <div>
+                        <span class="edit-err" data-id="59727" data-pid="" data-oname="" data-unit="" data-name="奔驰 新Actros 6X2冷藏车(型号2540L)" data-pname=""></span>
+                    </div> </td>
+                <!-- <i class="edit" style="display:none;" ></i> -->
+                <!-- 以下是拼接的数据  end -->
+            </tr>
+            </tbody>
+        </table>
+        <p class="notes"> 注：不符合中华人民共和国法规的，例如国三/国四车型，国内已经不能上牌，仅供出口，或国内非公路内部转运等不上牌地区使用。此参数仅供参考，实际车型配置以店内实车为准。 </p>
+        <table class="left-top-boxs">
+            <thead>
+            <tr>
+                <th id="a_p_0"></th>
+            </tr>
+            </thead>
+        </table>
+        <table class="par-deb-box">
+            <tbody>
+            <tr style="height: 46px;">
+                <td style="background: #fff;">厂商指导价：</td>
+            </tr>
+            <tr style="height: 46px;">
+                <td style="background: #fff;">本地最低报价：</td>
+            </tr>
+            <tr class="param-tit">
+                <th>基本信息</th>
+            </tr>
+            <tr class="param-row">
+                <td id="a_p_1">类型：</td>
+            </tr>
+            <tr class="param-row">
+                <td id="a_p_2">驱动形式：</td>
+            </tr>
+            <tr class="param-row">
+                <td id="a_p_3">轴距：</td>
+            </tr>
+            <tr class="param-row">
+                <td id="a_p_4">发动机：</td>
+            </tr>
+            <tr class="param-row">
+                <td id="a_p_5">总质量：</td>
+            </tr>
+            <tr class="param-row">
+                <td id="a_p_6">吨位级别：</td>
+            </tr>
+            <tr class="param-tit">
+                <th>发动机</th>
+            </tr>
+            <tr class="param-row">
+                <td id="a_p_7">发动机：</td>
+            </tr>
+            <tr class="param-row">
+                <td id="a_p_8">发动机品牌：</td>
+            </tr>
+            <tr class="param-row">
+                <td id="a_p_9">汽缸数：</td>
+            </tr>
+            <tr class="param-row">
+                <td id="a_p_10">燃料种类：</td>
+            </tr>
+            <tr class="param-row">
+                <td id="a_p_11">汽缸排列形式：</td>
+            </tr>
+            <tr class="param-row">
+                <td id="a_p_12">排放标准：</td>
+            </tr>
+            <tr class="param-row">
+                <td id="a_p_13">最大输出功率：</td>
+            </tr>
+            <tr class="param-row">
+                <td id="a_p_14">最大马力：</td>
+            </tr>
+            <tr class="param-row">
+                <td id="a_p_15">扭矩：</td>
+            </tr>
+            <tr class="param-row">
+                <td id="a_p_16">最大扭矩转速：</td>
+            </tr>
+            <tr class="param-row">
+                <td id="a_p_17">额定转速：</td>
+            </tr>
+            <tr class="param-tit">
+                <th>轮胎</th>
+            </tr>
+            <tr class="param-row">
+                <td id="a_p_18">轮胎规格：</td>
+            </tr>
+            <tr class="param-row">
+                <td id="a_p_19">轮胎数：</td>
+            </tr>
+            <tr class="param-tit">
+                <th>操控配置</th>
+            </tr>
+            <tr class="param-row">
+                <td id="a_p_20">ABS防抱死：</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <ul class="aside-nav" style="display: none;">
+        <li class="selected">基本信息</li>
+        <li>发动机</li>
+        <li>驾驶室参数</li>
+        <li>变速箱</li>
+        <li>轮胎</li>
+        <li>油箱</li>
+        <li>底盘</li>
+    </ul>
+    <!-- 对比模块 start -->
+    <div class="aside-pk " id="compare_task" style="margin-left: 0px; left: auto; right: 50px;">
+        <!-- unempty -->
+        <span class="task">车型对比</span>
+        <ul class="selected"></ul>
+        <div class="select" data-ajaxurl="/index.php?r=ajax/product/ajaxcontrast">
+            <div class="expand" id="select_value">
+                选择子类
+            </div>
+            <div class="options">
+                <div class="bread-crumbs">
+                    <span>子类</span>&gt;
+                </div>
+                <ul>
+                    <li data-option="66">牵引车</li>
+                    <li data-option="64">载货车</li>
+                    <li data-option="63">自卸车</li>
+                    <li data-option="163">中置轴</li>
+                    <li data-option="60">皮卡</li>
+                    <li data-option="93">微面</li>
+                    <li data-option="100">三轮低速货车</li>
+                    <li data-option="101">四轮低速货车</li>
+                    <li data-option="67">混凝土搅拌车</li>
+                    <li data-option="105">泵车</li>
+                    <li data-option="106">吊车</li>
+                    <li data-option="104">铰接式卡车</li>
+                    <li data-option="103">矿山车</li>
+                    <li data-option="87">非公路矿用自卸车</li>
+                    <li data-option="110">封闭货车</li>
+                    <li data-option="123">电动轻卡</li>
+                    <li data-option="124">电动封闭厢货</li>
+                    <li data-option="140">电动牵引车</li>
+                    <li data-option="143">电动自卸车</li>
+                    <li data-option="154">电动冷藏车</li>
+                    <li data-option="155">电动垃圾车</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer">
+            <span class="clear">清空</span>
+            <a href="/contrast/" target="_blank" id="go_compare">开始对比</a>
+            <!-- 需传递当前选中的车型id start -->
+        </div>
+    </div>
+    <!-- 对比模块 end -->
+    <div class="change_parameter" style="display: none">
+        <i class="outer-cover"></i>
+        <form action="" id="change_parameter" method="post">
+            <input type="hidden" name="upddataproid" value="">
+            <ul>
+                <li> <input type="text" name="parameter" value="" placeholder="正确参数" class="input-text"> </li>
+                <li> <input type="text" name="website" value="" placeholder="参考网址或说明" class="input-text"> </li>
+                <li style="font-size:0; *letter-spacing: -2px"> <input type="button" value="取消" class="cancel"> <input type="button" value="提交" class="submit">
+                    <!-- 暂时不进行 --> </li>
+            </ul>
+        </form>
+    </div>
+    <!-- 纠错弹层 -->
+    <div class="correction" id="correction">
+        <div class="header">
+            <h3>参数纠错</h3>
+            <span class="cancel">×</span>
+        </div>
+        <div class="content">
+            <dl>
+                <dt>
+                    车型：
+                </dt>
+                <dd id="car_type"></dd>
+            </dl>
+            <dl>
+                <dt>
+                    参数项：
+                </dt>
+                <dd id="drive"></dd>
+            </dl>
+            <dl>
+                <dt>
+                    原参数：
+                </dt>
+                <dd id="original"></dd>
+            </dl>
+            <dl>
+                <dt>
+                    <span>＊</span>正确参数：
+                </dt>
+                <dd>
+                    <textarea name="" id="correct" cols="30" rows="10" placeholder="&nbsp;请填写您认为的正确参数 ！"></textarea>
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    参考网址或说明：
+                </dt>
+                <dd>
+                    <textarea name="" id="refer" cols="30" rows="10" placeholder="&nbsp;请填写参考网址或说明 ！"></textarea>
+                </dd>
+            </dl>
+        </div>
+        <div class="footer">
+            <span class="submit" id="submit" data-ajaxurl="/index.php?r=series/paramerror">提交</span>
+            <span class="cancel">取消</span>
+        </div>
+    </div>
+    <div class="correction-success" id="correction_success">
+        <div class="header">
+            <h3>参数纠错</h3>
+            <span class="cancel">×</span>
+        </div>
+        <div class="content">
+            您提交的纠错信息我们已经收到，感谢您的反馈！
+        </div>
+        <div class="footer success">
+            <span class="cancel">确定</span>
+        </div>
+    </div>
+    <script>
+        $(".param-tit").each(function () {
+            if ($(this).next('tr').attr('class') != 'param-row') {
+                $(this).remove();
+            }
+        })
+    </script>
+    <script src="https://s.kcimg.cn/product/js/parameter.js?v4.4.19"></script>
+    <!--  参数对比需要用到的js   -->
+    <script src="https://s.kcimg.cn/product/js/compare-package.js?v4.4.19"></script>
+    <!-- 2016-01-18 start dzq  对比模块需要用到的 -->
+    <script>
+        function gacode(ec, ea, el, place) {
+
+            ga('send', 'event', ec, ea, el);
+            var exdate = new Date(),
+                downUrl = window.location.href,
+                allImgO = document.getElementById('specialAskPrice');
+            if (allImgO) {
+                allImgO.parentNode.removeChild(allImgO);
+            }
+        }
+
+        function taoGa(name, url) {
+            ga('require', 'ec');
+            ga('ec:addPromo', {
+                'id': name,
+                'name': url,
+                'position': name
+            });
+            ga('ec:setAction', 'promo_click');
+            ga('send', 'event', '点击内部推广位-二手车', name, url);
+        }
+
+        function videoGa(name) {
+            ga('require', 'ec');
+            ga('send', 'event', name);
+            return true;
+
+        }
+    </script>
+</div>
+<div class="truckhome-footer-2015">
+    <p> <a href="http://www.360che.com/help/about/" target="_blank" class="gred9">关于我们</a> <a href="http://www.360che.com/help/contact/" target="_blank" class="gred9">联系我们</a> <a href="http://www.360che.com/help/job/" target="_blank" class="gred9"> 工作机会</a> <a href="http://www.360che.com/help/sitemap/" target="_blank" class="gred9"> 网站地图</a> <a href="https://bbs.360che.com/certification/" target="_blank" rel="nofollow">企业账号申请</a> <a href="http://www.360che.com/help/ad/" target="_blank" class="gred9" rel="nofollow">广告合作</a> <span class="fbbsline">|</span> <a href="http://app.360che.com" target="_blank" class="gred9"> <em class="footios"></em>iPhone客户端 / <em class="footand"></em>Android客户端 </a> <span class="fbbsline">|</span> <a href="https://product.m.360che.com/s12/3169_64_param.html" target="_blank" class="gred9">手机版</a> <span class="fbbsline">|</span> <a href="http://www.360che.com/help/suggest/index.html" target="_blank" class="gred9" rel="nofollow">意见反馈</a> </p>
+    <p>经营许可证编号：京ICP证080575号 / 京ICP备09080840号 <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010502035781" style="display:inline-block;text-decoration:none;color:#999;"><img src="https://s.kcimg.cn/wap/images/brand/ghs.png" style="vertical-align: top;margin-left: 5px;
+">京公网安备 11010502035781号</a></p>
+    <p>Copyright © 2009 - <script>document.write(new Date().getFullYear());</script>2019 www.360che.com All Rights Reserved.<a href="http://www.360che.com/">卡车之家</a>版权所有 </p>
+</div>
+<!--页尾▲-->
+<!--2015.08.27 JS切换效果开始-->
+<script id="jsID" type="text/javascript">
+    jQuery(".js_switch1").get(0) && jQuery(".js_switch1").slide({});
+</script>
+<!--2015.08.27 JS切换效果结束-->
+<!-- 广告位管理2014.11.13 start -->
+<script src="https://s.kcimg.cn/main/ads_material.1.0.js?r=2015120916"></script>
+<script src="https://dup.baidustatic.com/js/os.js"></script>
+<!--<div id="BAIDU_AD_1000632"><script type='text/javascript'>BAIDU_CLB_fillSlot('1000632');</script></div>
+<script>BAIDU_CLB_prepareMoveSlot('1000632');</script>
+<script>document.getElementById('PAGE_AD_1000632').appendChild(document.getElementById('BAIDU_AD_1000632'));</script>
+<div id="BAIDU_AD_1000635"><script type='text/javascript'>BAIDU_CLB_fillSlot('1000635');</script></div>
+<script>BAIDU_CLB_prepareMoveSlot('1000635');</script>
+<script>document.getElementById('PAGE_AD_1000635').appendChild(document.getElementById('BAIDU_AD_1000635'));</script>
+<div id="BAIDU_AD_1000660"><script type='text/javascript'>BAIDU_CLB_fillSlot('1000660');</script></div>
+<script>BAIDU_CLB_prepareMoveSlot('1000660');</script>
+<script>document.getElementById('PAGE_AD_1000660').appendChild(document.getElementById('BAIDU_AD_1000660'));</script>
+<div id="BAIDU_AD_1000649"><script type='text/javascript'>BAIDU_CLB_fillSlot('1000649');</script></div>
+<script>BAIDU_CLB_prepareMoveSlot('1000649');</script>
+<script>document.getElementById('PAGE_AD_1000649').appendChild(document.getElementById('BAIDU_AD_1000649'));</script>
+-->
+<!-- 广告位管理2014.11.13 end -->
+<!--2014.11.17回顶部start-->
+<!-- 暂时不需要  dzi 2016-1-23 start -->
+<!-- <div class="gotop02" id="gotop"> <a id="feedback" href="http://www.360che.com/BuyCarInfoInsertNew.aspx" target="_blank" class="gotop03-con"><span>我要买车</span></a> <a id="feedback2" href="http://www.360che.com/help/suggest/index.html" target="_blank"
+           class="gotop02-con"><i class="icon-book icon-book2"></i><span>意见反馈</span></a> <a id="backtop" class="gotop02-con" href="javascript:void(0)" style="display: none;"> <i class="icon-top"></i><span>返回顶部</span></a> </div>-->
+<!--2014.11.17回顶部end-->
+<!--2014.11.17回顶部js start-->
+<!--2014.11.17回顶部js end-->
+<!-- 统计all start-->
+<!-- 360che统计签 -->
+<!-- for stats init -->
+<script src="https://js.360che.com/truckhome-1.1.js"></script>
+<script src="https://hm.baidu.com/hm.js?87035a00e917f0eee43e4967b495f7c9"></script>
+<script>
+    var options = {
+        "dl": 0,
+        "ct": 0,
+        "sr": 0,
+        "br": 0,
+        "p": 0
+    };
+    options.dl = 1;
+    options.ct = 64;
+    options.sr = 3169;
+    options.br = 19;
+    options.p = 0;
+    window.addEventListener('load', function () {
+        Truckhome_pv(options);
+    })
+</script>
+<!-- 统计all end-->
+<script type="application/ld+json">
+    {
+        "@context": "https://ziyuan.baidu.com/contexts/cambrian.jsonld",
+        "@id": "https://product.360che.com/s12/3169_64_param.html",
+        "appid": "1546527587706219",
+        "title": "【奔驰新Actros载货车】2019新款奔驰新Actros载货车参数配置|价格对比_奔驰_卡车之家",
+        "description": "奔驰新Actros载货车参数配置频道,为您提供2019奔驰新Actros载货车各车型参数配置,价格比较,发动机,变速箱对比等,全面了解奔驰奔驰新Actros载货车车型数据,对比奔驰新Actros载货车哪款车更好到卡车之家.",
+        "upDate": "2019-10-23T4:00:01"
+    }
+</script>
+</body>
