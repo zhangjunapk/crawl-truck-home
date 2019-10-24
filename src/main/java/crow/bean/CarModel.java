@@ -8,12 +8,12 @@ package crow.bean;
  * @Date: 2019/10/23 14:28
  */
 public class CarModel {
-    private String brandId;
-    private String brandSeriesId;
-    private String id;
-    private String name;
+    private String brandId;//品牌id
+    private String brandSeriesId;//品牌系列id
+    private String id;//id
+    private String name;//名字
     private String status;//在售，未上市，停售
-    private String link;
+    private String link;//链接
 
     public String getLink() {
         return link;

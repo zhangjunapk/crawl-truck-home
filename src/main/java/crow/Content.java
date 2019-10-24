@@ -5,6 +5,7 @@ import crow.bean.Brand;
 import crow.bean.BrandSeries;
 import crow.bean.CarModel;
 import crow.bean.CarSubtype;
+import crow.util.DBUtil;
 import net.sourceforge.pinyin4j.PinyinHelper;
 import net.sourceforge.pinyin4j.format.HanyuPinyinCaseType;
 import net.sourceforge.pinyin4j.format.HanyuPinyinOutputFormat;
@@ -49,12 +50,59 @@ public class Content {
         //接下来我要开始爬取列表页面
       //  crawListPage();
         //接下来放进去看看
-      //  writeToFile();
+    //    writeToFile();
 
         //接下来就是处理子类型
-        crawlSubType();
+        //crawlSubType();
         //接下来写入到文件
       //  writeToFile();
+      //  createTable();
+        //生成插入数据的sql并执行
+        runSql();
+    }
+
+    private static void runSql() {
+        DBUtil dbUtil = new DBUtil();
+        try {
+            /**
+             * "brand");
+             * ries.java"),"brand_series");
+             * ava"),"car_model");
+             * pe.java"),"car_subtype");
+             */
+            BufferedReader br = new BufferedReader(new FileReader("D:\\temp\\crawl\\brand.json"));
+            String line = "";
+            while ((line = br.readLine()) != null) {
+                Brand brand = JSONObject.parseObject(line, Brand.class);
+                String s = genInsertSql("brand", brand);
+                dbUtil.runSql(s);
+            }
+
+           /*  br = new BufferedReader(new FileReader("D:\\temp\\crawl\\brandSeries.json"));
+            while ((line = br.readLine()) != null) {
+                BrandSeries brandSeries = JSONObject.parseObject(line, BrandSeries.class);
+                //请求这个url，获得里面所有子类型的数据
+                String s = genInsertSql("brand_series", brandSeries);
+                dbUtil.runSql(s);
+            }*/
+
+             br = new BufferedReader(new FileReader("D:\\temp\\crawl\\carModel.json"));
+            while ((line = br.readLine()) != null) {
+                CarModel carModel = JSONObject.parseObject(line, CarModel.class);
+                String s = genInsertSql("car_model", carModel);
+                dbUtil.runSql(s);
+            }
+/*
+             br = new BufferedReader(new FileReader("D:\\temp\\crawl\\carSubtype.json"));
+            while ((line = br.readLine()) != null) {
+                CarSubtype carSubtype = JSONObject.parseObject(line, CarSubtype.class);
+                String s = genInsertSql("car_subtype", carSubtype);
+                dbUtil.runSql(s);
+            }*/
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }
     }
 
     private static void crawlSubType() throws IOException {
@@ -199,7 +247,7 @@ public class Content {
             String s = JSONObject.toJSONString(item);
             writeAppend(new StringBuilder(s).append("\r\n"),brandFile);
         }
-        for(BrandSeries item:brandSeriess){
+      /*  for(BrandSeries item:brandSeriess){
             String s = JSONObject.toJSONString(item);
             writeAppend(new StringBuilder(s).append("\r\n"),brandSeriesFile);
         }
@@ -210,7 +258,7 @@ public class Content {
         for(CarSubtype item:carSubtypes){
             String s = JSONObject.toJSONString(item);
             writeAppend(new StringBuilder(s).append("\r\n"),carSubtypeFile);
-        }
+        }*/
     }
 
     /**
@@ -252,10 +300,11 @@ public class Content {
                     String s = href.replaceAll("/", "");
                     String s1 = s.replaceAll(".html", "");
                     brand.setId(s1);
+                    brand.setName(brandEleId.text());
                 }
                 brands.add(brand);
                 //接下来获得每个品牌系列
-                BrandSeries brandSeries = new BrandSeries();
+               /* BrandSeries brandSeries = new BrandSeries();
                 Elements brandSeriesEles = brandEle.select("> div[class=xll_center2_a1_y] > div[class=xll_center2_a1_y1] > a");
                 if(!Objects.isNull(brandSeriesEles)&&!brandSeriesEles.isEmpty()){
                     Element brandSeriesEle = brandSeriesEles.get(0);
@@ -302,7 +351,7 @@ public class Content {
                         carModel.setStatus(statusEles.get(0).text());
                     }
                     carModels.add(carModel);
-                }
+                }*/
             }
         }
     }
@@ -330,10 +379,16 @@ public class Content {
 
 
     private static void createTable() throws Exception {
-        String brand=genCreateTable(new File("D:\\java\\base\\crowdycw\\src\\main\\java\\org\\zj\\crow\\bean\\Brand.java"),"dycw_brand");
-        String modelgroup=genCreateTable(new File("D:\\java\\base\\crowdycw\\src\\main\\java\\org\\zj\\crow\\bean\\ModelGroup.java"),"dycw_modelgroup");
-        String subversion=genCreateTable(new File("D:\\java\\base\\crowdycw\\src\\main\\java\\org\\zj\\crow\\bean\\SubVersion.java"),"dycw_subversion");
+        String brand=genCreateTable(new File("E:\\dev\\project\\java\\crawltruckhome\\src\\main\\java\\crow\\bean\\Brand.java"),"brand");
+        String brandSeries=genCreateTable(new File("E:\\dev\\project\\java\\crawltruckhome\\src\\main\\java\\crow\\bean\\BrandSeries.java"),"brand_series");
+        String carModel=genCreateTable(new File("E:\\dev\\project\\java\\crawltruckhome\\src\\main\\java\\crow\\bean\\CarModel.java"),"car_model");
+        String carSubtype=genCreateTable(new File("E:\\dev\\project\\java\\crawltruckhome\\src\\main\\java\\crow\\bean\\CarSubtype.java"),"car_subtype");
 
+        DBUtil dbUtil = new DBUtil();
+        dbUtil.runSql(brand);
+        dbUtil.runSql(brandSeries);
+        dbUtil.runSql(carModel);
+        dbUtil.runSql(carSubtype);
     }
 
     private static String genCreateTable(File file,String tableName) throws IOException {

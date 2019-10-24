@@ -8,11 +8,11 @@ package crow.bean;
  * @Date: 2019/10/23 14:28
  */
 public class Brand {
-    private String id;
-    private String name;
-    private String picLink;
-    private String firstWord;
-    private String link;
+    private String id;//id
+    private String name;//名字
+    private String picLink;//logo链接
+    private String firstWord;//首字母
+    private String link;//链接
 
     public String getLink() {
         return link;

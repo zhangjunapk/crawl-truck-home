@@ -8,15 +8,14 @@ package crow.bean;
  * @Date: 2019/10/23 14:29
  */
 public class CarSubtype {
-    private String brandId;
-    private String brandSeriesId;
-    private String carModelId;
-    private String id;
+    private String brandId;//品牌id
+    private String brandSeriesId;//品牌系列id
+    private String carModelId;//车型id
+    private String id;//id
 
-    private String name;
-    private String price;
-    private String link;
-
+    private String name;//名字
+    private String price;//价格
+    private String link;//链接
     private String ggxh;//公告型号
     private String lx;//类型
     private String qdxs;//驱动形式

@@ -8,10 +8,10 @@ package crow.bean;
  * @Date: 2019/10/23 14:28
  */
 public class BrandSeries {
-    private String id;
-    private String brandId;
-    private String name;
-    private String link;
+    private String id;//id
+    private String brandId;//品牌id
+    private String name;//名字
+    private String link;//链接
 
     public String getLink() {
         return link;
